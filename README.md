@@ -22,7 +22,7 @@ docker build . -t sqs-worker
 Run with env file for configuration
 
 ```
-docker run -it --env-file .env sqs-worker
+docker run -it sqs-worker
 ```
 
 sample .env file:

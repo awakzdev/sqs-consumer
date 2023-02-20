@@ -35,4 +35,4 @@ SQS_QUEUE_URL=https://sqs.eu-central-1.amazonaws.com/946796614687/processing-que
 ## Endpoints
 Support for Flask added within the following endpoints 
 - ('/') will return an HTTP OK response 
-- ('/message_count') will return the number of messages in the queue
+- ('/count') will return the number of messages in the queue

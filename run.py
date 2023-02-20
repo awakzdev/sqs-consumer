@@ -17,7 +17,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # Create SQS client
-sqs = boto3.client('sqs', region_name='eu-central-1')
+sqs = boto3.client('sqs')
 queue_url = os.getenv('SQS_QUEUE_URL')
 
 # Process messages in the background

@@ -9,7 +9,7 @@ Application uses boto, meaning any standard AWS credential methods are supported
 
 The following arguments are required:
 
-SQS_QUEUE_URL - The URL of the SQS queue to pull from, in the form of https://sqs.<aws-region>.amazonaws.com/<aws-account-id>/<queue-name>
+SQS_QUEUE_URL - The URL of the SQS queue to pull from, in the form of https://sqs.{aws-region}.amazonaws.com/{aws-account-id}/{queue-name}
 
 
 ## Usage

@@ -29,6 +29,7 @@ sample .env file:
 ```
 AWS_ACCESS_KEY_ID=ABCD1234ABC
 AWS_SECRET_ACCESS_KEY=knsdf854ynldnbv9w459nbdb489
+AWS_DEFAULT_REGION=eu-central-1
 SQS_QUEUE_URL=https://sqs.eu-central-1.amazonaws.com/946796614687/processing-queue
 ```
 

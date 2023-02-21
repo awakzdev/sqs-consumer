@@ -1,0 +1,20 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: aws-sqs-queue-scaledobject
+spec:
+  scaleTargetRef:
+    name: {{ .Values.scaledobject.scaleTargetRef.name }}
+  maxReplicaCount: {{ .Values.scaledobject.maxReplicaCount }}
+  minReplicaCount: {{ .Values.scaledobject.minReplicaCount }}
+  idleReplicaCount: {{ .Values.scaledobject.idleReplicaCount }}
+  cooldownPeriod: {{ .Values.scaledobject.cooldownPeriod }}
+  triggers:
+  - type: aws-sqs-queue
+    authenticationRef:
+      name: keda-trigger-auth-aws-credentials
+    metadata:
+      queueURL: {{ .Values.scaledobject.queueURL }}
+      queueLength: "{{ .Values.scaledobject.queueLength }}"
+      awsRegion: {{ .Values.scaledobject.awsRegion }}
+      scaleOnInFlight: "{{ .Values.scaledobject.scaleOnInFlight }}"

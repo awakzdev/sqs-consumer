@@ -37,3 +37,8 @@ SQS_QUEUE_URL=https://sqs.eu-central-1.amazonaws.com/946796614687/processing-que
 Support for Flask added within the following endpoints 
 - ('/') will return an HTTP OK response 
 - ('/count') will return the number of messages in the queue
+
+## Keda (horizontal scaling) is included within /charts
+Keda reads the amount of messages in queue through an attribute called `ApproximateNumberOfMessages` and scales your pods accordingly.
+
+For more information on Keda you may view the URL provided - https://keda.sh/docs/2.9/deploy/

@@ -38,6 +38,9 @@ Support for Flask added within the following endpoints
 - ('/') will return an HTTP OK response 
 - ('/count') will return the number of messages in the queue
 
+## SQS load generator
+- To send multiple messages, for example, you would run the command `python sqs-load-generator.py 5`. This would send 5 messages to the SQS queue. (default 1)
+
 ## Keda (horizontal scaling) is included within /charts
 Keda reads the amount of messages in queue through an attribute called `ApproximateNumberOfMessages` and scales your pods accordingly.
 

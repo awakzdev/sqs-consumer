@@ -13,6 +13,7 @@ The program creates a Flask app with two routes: '/' and '/count'.
 The '/' route returns an HTTP OK response,
 while the '/count' route returns the approximate number of messages in the SQS queue.
 '''
+
 # Configure logger
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

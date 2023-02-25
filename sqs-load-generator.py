@@ -4,6 +4,12 @@ import sys
 from datetime import datetime
 from dotenv import load_dotenv
 
+'''
+The function of the program takes an optional argument (the number of messages to send)
+from the command line and sends that number of messages to the SQS queue.
+Each message is a string that includes the message number and the current date and time.
+'''
+
 # Load environment variables from .env
 load_dotenv()
 
@@ -20,7 +26,6 @@ def send_sqs_message(queue_url, message):
     return response
 
 def main():
-    # Replace 'QUEUE_URL' with your SQS queue URL
     queue_url = os.getenv('SQS_QUEUE_URL', 'QUEUE_URL')
     num_messages = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     for i in range(num_messages):

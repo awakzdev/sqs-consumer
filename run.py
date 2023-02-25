@@ -59,7 +59,6 @@ message_thread = threading.Thread(target=process_messages)
 message_thread.daemon = True
 message_thread.start()
 
-# Add endpoint at / to return HTTP OK response
 @app.route('/')
 def test():
     '''
@@ -67,7 +66,6 @@ def test():
     '''
     return 'OK', 200
 
-# Add endpoint at /count to return number of messages in the queue
 @app.route('/count')
 def message_count():
     '''

@@ -71,14 +71,14 @@ message_thread.start()
 @app.route('/')
 def test():
     '''
-    This function is optional and will return an HTTP OK Response (200)
+    Return an HTTP OK Response (200)
     '''
     return 'OK', 200
 
 @app.route('/count')
 def message_count():
     '''
-    This function is optional and will return the number of messages within queue
+    Return the number of messages within queue
     '''
     response = sqs.get_queue_attributes(QueueUrl=queue_url, AttributeNames=['ApproximateNumberOfMessages'])
     return jsonify({'count': response['Attributes']['ApproximateNumberOfMessages']})

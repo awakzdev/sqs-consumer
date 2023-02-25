@@ -62,11 +62,17 @@ message_thread.start()
 # Add endpoint at / to return HTTP OK response
 @app.route('/')
 def test():
+    '''
+    This function is optional and will return an HTTP OK Response (200)
+    '''
     return 'OK', 200
 
 # Add endpoint at /count to return number of messages in the queue
 @app.route('/count')
 def message_count():
+    '''
+    This function is optional and will return the number of messages within queue
+    '''
     response = sqs.get_queue_attributes(QueueUrl=queue_url, AttributeNames=['ApproximateNumberOfMessages'])
     return jsonify({'count': response['Attributes']['ApproximateNumberOfMessages']})
 

@@ -33,6 +33,21 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "sqs-worker.fullname" . }}
+                  key: AWS_ACCESS_KEY_ID
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "sqs-worker.fullname" . }}
+                  key: AWS_SECRET_ACCESS_KEY
+            - name: AWS_DEFAULT_REGION
+              value: {{ .Values.scaledobject.awsRegion }}
+            - name: SQS_QUEUE_URL
+              value: {{ .Values.scaledobject.queueURL }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}

@@ -7,8 +7,9 @@ import logging
 import threading
 
 '''
-This is a Python program using the Flask web framework and the AWS SDK for Python (Boto3)
-to create a server that processes messages from an Amazon Simple Queue Service (SQS) queue.
+This script uses the Flask web framework and the AWS SDK for Python (Boto3)
+to processes messages from an Amazon Simple Queue Service (SQS) queue.
+
 The program creates a Flask app with two routes: '/' and '/count'.
 The '/' route returns an HTTP OK response,
 while the '/count' route returns the approximate number of messages in the SQS queue.
